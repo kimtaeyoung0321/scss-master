@@ -1,4 +1,19 @@
+@import "_variables.scss";
+@import "_mixins.scss";
+
 body {
-  background-color: aquamarine;
-  margin: 30px;
+  background-color: $bg;
+}
+
+.Title {
+  margin-top: 20px;
+  h2 {
+    color: aqua;
+    &:hover {
+      color: black;
+    }
+  }
+  button {
+    color: blue;
+  }
 }

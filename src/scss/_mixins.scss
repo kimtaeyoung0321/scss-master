@@ -1,0 +1,14 @@
+@mixin common-box($wsize: 10px, $hsize: 10px) {
+  &:after {
+    width: $wsize;
+    height: $hsize;
+    display: block;
+    content: "";
+    border: 1px solid #333;
+    @content;
+  }
+}
+
+@include common-box(20px, 30px) {
+  background-color: #333;
+}
