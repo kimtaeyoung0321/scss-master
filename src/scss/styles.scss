@@ -1,19 +1,117 @@
 @import "_variables.scss";
 @import "_mixins.scss";
-
-body {
-  background-color: $bg;
+@import "reset.scss";
+* {
+  box-sizing: border-box;
 }
-
-.Title {
-  margin-top: 20px;
-  h2 {
-    color: aqua;
-    &:hover {
-      color: black;
+body {
+  height: 100vh;
+  background-color: $white;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $white;
+  width: $fixedwidth;
+  height: 100%;
+  padding: 10vh 0 72px 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: $red;
+  line-height: 1.2;
+  h1 {
+    font-size: 80px;
+    width: 50%;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+  h3 {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 25px;
+  }
+  h3,
+  p,
+  .sm-version {
+    width: 72%;
+    text-align: justify;
+  }
+  nav {
+    margin-top: 28px;
+    width: 80%;
+    ul {
+      display: flex;
+      align-content: center;
+      flex-wrap: wrap;
+      li {
+        margin-right: 12px;
+        font-size: 17px;
+        color: rgb(96, 96, 96);
+        border-bottom: 1px solid rgb(96, 96, 96);
+        padding-bottom: 3px;
+        &:hover {
+          color: black;
+        }
+      }
     }
   }
-  button {
-    color: blue;
+  p {
+    font-size: 18px;
+  }
+  .sm-version {
+    font-size: 7px;
+    margin-top: 15px;
+    color: #92928b;
+  }
+}
+
+main {
+  margin-left: $fixedwidth;
+  .movie {
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.2) 5%,
+        transparent,
+        transparent,
+        transparent,
+        transparent
+      )
+      $red;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    color: white;
+    align-items: center;
+    .wrapper {
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      .movie__header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 25px;
+        align-items: flex-end;
+        h4 {
+          font-size: 42px;
+          text-transform: uppercase;
+        }
+        h5 {
+          font-size: 20px;
+        }
+      }
+      img {
+        width: 100%;
+        box-shadow: 0 0 10px gray inset, 0 0 10px black;
+      }
+      .rating {
+        display: flex;
+        justify-content: end;
+        margin-top: 20px;
+        font-weight: 300;
+        font-size: 25px;
+      }
+    }
   }
 }
